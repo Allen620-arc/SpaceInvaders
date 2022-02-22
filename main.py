@@ -1,11 +1,14 @@
 import pygame
 import random
 
-# initialize the pygame
+# Initialize the pygame
 pygame.init()
 
-# create the screen
+# Create the screen
 screen = pygame.display.set_mode((800, 600))
+
+# Background
+background = pygame.image.load('background.png')
 
 # Title and Icon
 pygame.display.set_caption("Space Invaders")
@@ -40,6 +43,9 @@ while running:
 
     # RGB - Red, Green, Blue
     screen.fill((0, 0, 0))
+
+    # Background Image
+    screen.blit(background, (0, 0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
